@@ -56,7 +56,6 @@ $welcome = !array_key_exists('nowelcome', $_GET) && !($this->session->flashdata(
 <div>Or sign in using:</div>
 <div class="addthis_toolbox">
     <a class="addthis_login_google"></a>
-    <a class="addthis_login_twitter"></a>
     <a class="addthis_login_facebook"></a>
 </div>
 <script type="text/javascript">
@@ -64,8 +63,7 @@ var addthis_config = {
     login : {
         services :{
             facebook:{appId:'161499153968957'} , 
-            google:{clientId:'780989514794.apps.googleusercontent.com'}, 
-            twitter:{appKey:'zJBQiyqKl76HCqn2bmwNw'}
+            google:{clientId:'780989514794.apps.googleusercontent.com'}
         }, callback:function(user) {
                var signature = document.getElementById('signature');
                signature.value = user.addthis_signature;
@@ -101,8 +99,7 @@ function unlink(){
 <p>Once you provide API keys via JavaScript, actually putting buttons in your page is straightforward:
 <pre class="prettyprint">
 &lt;div class="addthis_toolbox"&gt;
-    &lt;a class="addthis_login_google"&gt;&lt;/a&gt;
-    &lt;a class="addthis_login_twitter"&gt;&lt;/a&gt;
+    &lt;a class="addthis_login_google"&gt;&lt;/a&gt;    
     &lt;a class="addthis_login_facebook"&gt;&lt;/a&gt;
 &lt;/div&gt;
 </pre>

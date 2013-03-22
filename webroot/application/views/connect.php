@@ -17,7 +17,7 @@ if(count($connect_data) < 3){
 ?>
 <div class="addthis_toolbox">
 <?php
-    $services = array('google'=>0,'twitter'=>0, 'facebook'=>0);
+    $services = array('google'=>0, 'facebook'=>0);
     foreach ($connect_data as $row) {
         $services[$row->service] = 1;
     }
@@ -44,19 +44,15 @@ if(count($connect_data) > 0) {
             case 'google':?>
             <div style="height:40px"><img src="<?php echo base_url()?>skin/images/gmail.png" style="vertical-align:middle"/>&nbsp;&nbsp;
             
-        <?php 
-            break;
-            case 'twitter':?>
-            <div style="height:40px"><img src="<?php echo base_url()?>skin/images/twitter.png" style="vertical-align:middle"/>&nbsp;&nbsp;
-           
-        <?php 
+			<?php 
             break;
             case 'facebook' :?>
             <div style="height:40px"><img src="<?php echo base_url()?>skin/images/facebook.png" style="vertical-align:middle"/>&nbsp;&nbsp;
            
-        <?php break;			
-        }?>
-        <a href="<?php echo $row->profileUrl?>" target="_blank"><?php echo $row->profileUrl?></a>
+       		 <?php 
+       		 break;			
+        	}?>
+        	<a href="<?php echo $row->profileUrl?>" target="_blank"><?php echo $row->profileUrl?></a>
             &nbsp;&nbsp;
             <?php if(count($connect_data)>1):?><a href="javascript:remove_access(<?php echo $row->social_id?>)"><img src="<?php echo base_url()?>skin/images/delete.png" border="0"/></a><?php endif;?>
         </div>
@@ -76,10 +72,7 @@ if(count($connect_data) > 0) {
     <input type="hidden" name="service" id="service" value=""/>
  </form>
  <script>
-var addthis_config = {login : {services :{
-    facebook:{appId:'161499153968957'} , 
-    google:{clientId:'780989514794.apps.googleusercontent.com'}, 
-    twitter:{appKey:'zJBQiyqKl76HCqn2bmwNw'}
+var addthis_config = {login : {services :{ facebook:{appId:'161499153968957'}, google:{clientId:'780989514794.apps.googleusercontent.com'},    
 	}, callback:function(user) {
 	
 	var signature = document.getElementById('signature');
@@ -96,7 +89,7 @@ var addthis_config = {login : {services :{
   }
 }; 
 
-//addthis.login.connect({twitter: {id: 12345},facebook: {id: 333,scope:'email,fff'}, callback:function (user){
+//addthis.login.connect({facebook: {id: 333,scope:'email,fff'}, callback:function (user){
 //	
 //	var signature = document.getElementById('signature');
 //	signature.value = user.addthis_signature;
